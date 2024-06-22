@@ -45,3 +45,29 @@ button:hover {
   margin-top: 10px;
   color: #d9534f;
 }
+/* Optional: Customize styling as needed */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.folder-node {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.folder-name {
+  font-weight: bold;
+}
+
+.files-list {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.files-list li {
+  margin-bottom: 5px;
+}
