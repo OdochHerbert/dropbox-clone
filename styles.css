@@ -3,9 +3,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   background-color: #f4f4f4;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .container {
@@ -13,6 +15,8 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
 }
 
 h1 {
@@ -24,8 +28,18 @@ form {
   flex-direction: column;
 }
 
-input[type="file"] {
+.form-group {
   margin-bottom: 10px;
+}
+
+input[type="file"],
+input[type="text"],
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 button {
@@ -41,15 +55,15 @@ button:hover {
   background-color: #0056b3;
 }
 
-#message {
+.message {
   margin-top: 10px;
-  color: #d9534f;
 }
-/* Optional: Customize styling as needed */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+
+#uploadMessage,
+#createFolderMessage,
+#uploadFileModalMessage,
+#createFolderModalMessage {
+  color: #d9534f;
 }
 
 .folder-node {
@@ -61,6 +75,7 @@ button:hover {
 
 .folder-name {
   font-weight: bold;
+  cursor: pointer;
 }
 
 .files-list {
@@ -70,4 +85,67 @@ button:hover {
 
 .files-list li {
   margin-bottom: 5px;
+}
+
+/* Context Menu Styling */
+.context-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.context-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.context-menu ul li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.context-menu ul li:hover {
+  background-color: #f4f4f4;
+}
+
+/* Modal Styling */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
